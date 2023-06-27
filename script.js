@@ -4,12 +4,20 @@ function verifyInput(input) {
   }
 }
 
+function verifyNumber(number) {
+  if (isNaN(number)) {
+    throw new Error('Informe dois números para realizar a soma');
+  }
+}
+
 function calculateSum() {
   const value1 = document.getElementById('value1').value;
   const value2 = document.getElementById('value2').value;
   try {
     verifyInput(value1);
     verifyInput(value2);
+    verifyNumber(value1);
+    verifyNumber(value2);
     const result = Number(value1) + Number(value2);
     return result;
   } catch (error) {

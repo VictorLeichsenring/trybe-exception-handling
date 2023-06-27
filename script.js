@@ -19,3 +19,4 @@ window.onload = () => {
   const button = document.getElementById('button');
   button.addEventListener('click', sum);
 };
+//iniciando o exercicio

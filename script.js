@@ -11,17 +11,20 @@ function verifyNumber(number) {
 }
 
 function calculateSum() {
-  const value1 = document.getElementById('value1').value;
-  const value2 = document.getElementById('value2').value;
+  const value1 = document.getElementById('value1');
+  const value2 = document.getElementById('value2');
   try {
-    verifyInput(value1);
-    verifyInput(value2);
-    verifyNumber(value1);
-    verifyNumber(value2);
-    const result = Number(value1) + Number(value2);
+    verifyInput(value1.value);
+    verifyInput(value2.value);
+    verifyNumber(value1.value);
+    verifyNumber(value2.value);
+    const result = Number(value1.value) + Number(value2.value);
     return result;
   } catch (error) {
     return error.message;
+  } finally {
+    value1.value = '';
+    value2.value = '';
   }
 }
 
